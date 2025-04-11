@@ -1,10 +1,24 @@
 <div class="index-wrapper">
     <h1>Events</h1>
     <div class="event-show">
-        <% @events.each do | event | %>
-        <div class="event">
-            <%= render event %>
-        </div>
+        <% if @upcoming_events.any? %>
+            <h3>Upcoming Events</h1>
+            <% @upcoming_events.each do | event | %>
+            <div class="event">
+                <%= render event %>
+            </div>
+            <% end %>
+        <% end %>
+        <% if @past_events.any? %>
+            <h3>Past Events</h1>
+            <% @past_events.each do | event | %>
+            <div class="event">
+                <%= render event %>
+            </div>
+            <% end %>
+        <% end %>
+        <% unless @upcoming_events.any? || @past_events.any? %>
+            <p>No Events yet...</p>
         <% end %>
     </div>
 
