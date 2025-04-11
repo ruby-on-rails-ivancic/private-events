@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: system-ui, sans-serif;
+    color: #333;
+}
+
+header {
+    background-color: white;
+    color: black;
+    position: relative;  
+    text-align: center;
+    /* height: 50px; */
+    padding: 1rem;
+    font-size: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);  
+}
+
+header h1 {
+    margin: 0;
+}
+header a:hover {
+    text-decoration: none;
+}
+.login-links {
+    position: absolute;    /* Locks it to the <header> container */
+    top: 1.5rem;             /* Pushes it down from the top edge */
+    right: 1rem;            /* Pushes it in from the left edge */
+}
+
+header nav {
+    position: absolute;    /* Locks it to the <header> container */
+    top: 1.5rem;             /* Pushes it down from the top edge */
+    left: 1rem;  
+}
+
+footer {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #eee;
+    text-align: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-family: inherit;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: color 0.5s, background-color 0.5s;
+}
+
+button:hover {
+    border: 1px solid black;
+    color: black;
+    background-color: white;
+}
+
+/* Style the flash modal container */
+.flash-modal {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 9999;
+    display: none;
+}
+  
+.flash-message {
+    background-color: #333; /* fallback color */
+    color: #fff;
+    padding: 1rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 0.5rem;
+    /* min-width: 220px; */
+    max-width: 300px;
+    font-size: 0.95rem;
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide-in 0.4s forwards;
+}
+  
+@keyframes slide-in {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  /* Optional: distinct colors per flash type */
+.flash-notice {
+    background-color: #28a745;
+}
+  
+.flash-alert {
+    background-color: #dc3545;
+}
+  
+  

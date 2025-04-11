@@ -1,0 +1,19 @@
+<div class="flex-center">
+    <%= form_with model: event do |form| %>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %><br><br>
+        <%= form.label :location %><br>
+        <%= form.text_field :location %><br><br>
+        <% event.errors.full_messages_for(:location).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+        <%= form.label :date %><br>
+        <%= form.date_field :date %><br><br>
+        <% event.errors.full_messages_for(:date).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+        <%= form.label :description %><br>
+        <%= form.text_area :description %><br><br>
+        <%= form.submit %>
+    <% end %>
+</div>

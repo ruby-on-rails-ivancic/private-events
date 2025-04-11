@@ -1,0 +1,46 @@
+.user-show-wrapper {
+    max-width: 900px;
+    margin: 0 auto;  
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 1rem; */
+    flex-direction: column;
+    gap:10px;
+
+}
+.event-lists-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.user-event-list {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 2px 2px 2px rgba(0,0,0,0.1);  
+}
+
+.user-events-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.host-events {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.title {
+    margin:0;
+    text-align: center;
+    border-bottom: 1px solid rgb(135, 135, 135);
+}

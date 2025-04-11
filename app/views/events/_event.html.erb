@@ -1,0 +1,7 @@
+<div class="user-event">
+  <%= link_to event_path(event) do %>
+    <p><strong><%= event.name %></strong></p>
+  <% end %>
+  <p>Date: <%= event.date.strftime("%B %d, %Y") %></p>
+  <p>Location: <%= event.location %></p>
+</div>

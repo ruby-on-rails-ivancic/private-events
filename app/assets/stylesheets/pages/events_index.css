@@ -1,0 +1,10 @@
+.index-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.event:not(:last-child) {
+    border-bottom: 1px solid rgb(135, 135, 135);
+}

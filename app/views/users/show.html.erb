@@ -1,0 +1,48 @@
+<div class="user-show-wrapper">
+    <div class="user-events-header">
+        <h1>Your events</h1>
+        <%= link_to "Create Event", new_event_path %>
+    </div>
+    <div class="event-lists-wrapper">
+
+        <div class="user-event-list">
+            <div class="title">
+            <h2>Your Hosted Events</h2>
+            </div>
+            <% if @hosted_events.any? %>
+                <% @hosted_events.each do |event| %>
+                    <div class="host-events">
+                        <%= render event %>
+                        <%= link_to "Edit event", edit_event_path(event)%>
+                    </div>
+                <% end %>
+            <% else %>
+                <p>No events yet...</p>
+            <% end %>
+        </div>
+        <div class="user-event-list">
+            <div class="title">
+                <h2>Events You're Attending</h2>
+            </div>
+            <% if @attended_events.any? %>
+                <% upcoming = @attended_events.select { |e| e.date >= Time.current } %>
+                <% past = @attended_events.select { |e| e.date < Time.current } %>
+                <h4>Upcoming events</h4>
+                <% if upcoming.any? %>
+                    <%= render upcoming %>
+                <% else %>
+                    <p>No Upcoming events...</p>
+                <% end %>
+                <h4>Past events</h4>
+                <% if past.any? %>
+                    <%= render past %>
+                <% else %>
+                    <p>No Past events...</p>
+                <% end %>
+            <% else %>
+                <p>No events yet...</p>
+            <% end %>
+        </div>
+    </div>
+</div>
+

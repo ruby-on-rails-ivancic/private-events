@@ -1,0 +1,27 @@
+<div class="event-container flex-center">
+  <div class="event-show">
+    <div class="event-header">
+      <h1><%= @event.name %></h1>
+      <% if user_signed_in? %>
+        <% if @event.attendees.include?(current_user) %>
+          <%= button_to "Cancel Attendance", event_attending_path(@event, current_user.attendings.find_by(event: @event)), method: :delete, data: { turbo: false } %>
+        <% else %>
+          <%= button_to "Attend", event_attendings_path(event_id: @event.id), method: :post, data: { turbo: false } %>
+        <% end %> 
+      <% else %>
+        <%= link_to "Sign in to attend", new_user_session_path %>
+      <% end %>
+    </div>
+    <%= @event.date.strftime("%B %d, %Y") %><br>
+    <%= @event.location %><br>
+    <%= @event.description %><br>
+
+    <% if @event.attendees.any? %>
+        <h2>Attendees</h2>
+        <% @event.attendees.each do |attendee| %>
+          <%= attendee.username %><br>
+        <% end %>
+    <% end %>
+
+  </div>
+</div>

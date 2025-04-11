@@ -1,0 +1,11 @@
+<div class="index-wrapper">
+    <h1>Events</h1>
+    <div class="event-show">
+        <% @events.each do | event | %>
+        <div class="event">
+            <%= render event %>
+        </div>
+        <% end %>
+    </div>
+
+</div>
